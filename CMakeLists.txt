@@ -1,4 +1,7 @@
-cmake_minimum_required(VERSION 2.8)
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
 
-project(intensity)
-add_executable(${PROJECT_NAME} "main.cpp")
+PROJECT(intensity)
+FILE(GLOB SOURCES ${PROJECT_SOURCE_DIR}/src/*.cpp)
+FILE(GLOB HEADERS ${PROJECT_SOURCE_DIR}/include/*.h)
+INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/include)
+ADD_EXECUTABLE(${PROJECT_NAME} ${SOURCES} ${HEADERS})
